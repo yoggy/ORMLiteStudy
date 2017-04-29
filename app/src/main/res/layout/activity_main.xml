@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0sp"
+    android:paddingLeft="0sp"
+    android:paddingRight="0sp"
+    android:paddingTop="0sp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORMiteStudy - http://ormlite.com/"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:text="insert" />
+
+    <Button
+        android:id="@+id/buttonSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select"
+        android:layout_alignBottom="@+id/buttonInsert"
+        android:layout_toEndOf="@+id/buttonInsert" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update"
+        android:layout_alignBaseline="@+id/buttonInsert"
+        android:layout_toEndOf="@+id/buttonSelect" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        android:layout_alignBaseline="@+id/buttonUpdate"
+        android:layout_alignBottom="@+id/buttonUpdate"
+        android:layout_toEndOf="@+id/buttonUpdate" />
+
+    <Button
+        android:id="@+id/buttonSelect2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonInsert"
+        android:layout_below="@+id/buttonInsert"
+        android:text="select2" />
+
+    <Button
+        android:id="@+id/buttonDeleteAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeleteAll"
+        android:layout_alignBaseline="@+id/buttonSelect2"
+        android:layout_toEndOf="@+id/buttonSelect2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonInsert"
+        android:layout_below="@+id/buttonSelect2"
+        android:text="where id=" />
+
+    <EditText
+        android:id="@+id/editTextWhereId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSelect2"
+        android:layout_toEndOf="@+id/textView3"
+        android:ems="10"
+        android:inputType="none"
+        android:selectAllOnFocus="false" />
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/buttonInsert"
+        android:text="TextView"
+        android:maxLines = "3000"
+        android:scrollbars = "vertical"
+        android:layout_below="@+id/editTextWhereId" />
+
+</RelativeLayout>
