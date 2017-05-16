@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonUpdate;
     Button buttonDelete;
     Button buttonDeleteAll;
+    Button buttonCount;
 
     TextView textViewMessage;
     EditText editTextWhereId;
@@ -103,6 +104,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onButtonDeleteAll();
+            }
+        });
+
+        buttonCount = (Button)findViewById(R.id.buttonCount);
+        buttonCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onButtonCount();
             }
         });
 
@@ -216,6 +225,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         showAllRecodes();
+    }
+
+    void onButtonCount() {
+        log_d("onButtonCount()");
+
+        long count = -1;
+
+        try {
+            QueryBuilder queryBuilder = dao.queryBuilder();
+            queryBuilder.setCountOf(true);
+            // queryBuilderなので条件はwhere()などで設定可能
+            count = dao.countOf(queryBuilder.prepare());
+        } catch (SQLException e) {
+            log_e("dao.countOf() failed...", e);
+        }
+
+        textViewMessage.setText("count=" + count);
     }
 
     void showAllRecodes() {

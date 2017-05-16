@@ -69,6 +69,14 @@ SELECT
          builder.offset(0L).limit(100L); // ページング
          List<Test> results = builder.query();
     
+COUNT
+
+    // queryBuilder.setCountOf(true), dao.countOf()を使用する
+    QueryBuilder queryBuilder = dao.queryBuilder();
+    queryBuilder.setCountOf(true);
+    // queryBuilderなので条件はwhere()などで設定可能
+    
+    long count = dao.countOf(queryBuilder.prepare());
 
 UPDATE
 

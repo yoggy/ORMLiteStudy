@@ -96,4 +96,12 @@
         android:scrollbars = "vertical"
         android:layout_below="@+id/editTextWhereId" />
 
+    <Button
+        android:id="@+id/buttonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonUpdate"
+        android:layout_toEndOf="@+id/buttonDeleteAll"
+        android:text="Count" />
+
 </RelativeLayout>
